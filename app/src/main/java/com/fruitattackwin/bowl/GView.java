@@ -1,7 +1,6 @@
 package com.fruitattackwin.bowl;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.*;
@@ -98,9 +97,12 @@ public class GView extends SurfaceView implements Runnable {
             if (bugs.isCollision(eye.x, eye.y, eye.size)) {
                 gameRunning = false;
 
-                Intent intent = new Intent(((Activity) appContext).getParent(), FinalActivity.class);
-                appContext.startActivity(intent) ;
-                ((Activity) appContext).finish();
+                Intent intent = ((Activity) getContext()).getIntent();
+                getContext().startActivity(intent);
+                ((Activity) getContext()).finish();
+
+
+
             }
         }
     }

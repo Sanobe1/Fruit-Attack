@@ -9,10 +9,7 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".FinalActivity">
-        </activity>
-        <activity android:name=".RestartActivity">
-        </activity>
+        <activity android:name=".FinalActivity"/>
         <activity android:name=".PrivacyPolicyActivity"/>
         <activity android:name=".RulesActivity"/>
         <activity android:name=".MainActivity"/>
