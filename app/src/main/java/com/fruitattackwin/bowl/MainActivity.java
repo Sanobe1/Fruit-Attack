@@ -33,7 +33,11 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
 
         }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
 
+    }
 
     public boolean onTouch(View button, MotionEvent motion) {
         switch(button.getId()) {

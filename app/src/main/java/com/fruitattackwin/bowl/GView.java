@@ -1,6 +1,9 @@
 package com.fruitattackwin.bowl;
 
+import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.*;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
@@ -8,7 +11,7 @@ import android.view.SurfaceView;
 
 import java.util.ArrayList;
 
-public class GView extends SurfaceView implements Runnable{
+public class GView extends SurfaceView implements Runnable {
     public static int maxX = 20;
     public static int maxY = 28;
     public static float unitW = 0;
@@ -21,11 +24,12 @@ public class GView extends SurfaceView implements Runnable{
     private final ArrayList<Bugs> bugs = new ArrayList<>();
     private int currentTime = 0;
     private boolean backAlreadyDraw = false;
-    private  Bitmap bitmapSource;
-
+    private Bitmap bitmapSource;
+    private Context appContext;
 
     public GView(Context context) {
         super(context);
+        appContext = context;
         surfaceHolder = getHolder();
         paint = new Paint();
         bitmapSource = BitmapFactory.decodeResource(getResources(), R.drawable.back);
@@ -39,7 +43,7 @@ public class GView extends SurfaceView implements Runnable{
             update();
             draw();
             checkCollision();
-            checkIfNewAsteroid();
+            checkIfNewBugs();
             control();
 
 
@@ -47,7 +51,7 @@ public class GView extends SurfaceView implements Runnable{
     }
 
     private void update() {
-        if(!firstTime) {
+        if (!firstTime) {
             eye.update();
             for (Bugs bug : bugs) {
                 bug.update();
@@ -58,10 +62,10 @@ public class GView extends SurfaceView implements Runnable{
     private void draw() {
         if (surfaceHolder.getSurface().isValid()) {
 
-            if(firstTime){
+            if (firstTime) {
                 firstTime = false;
-                unitW = surfaceHolder.getSurfaceFrame().width()/maxX;
-                unitH = surfaceHolder.getSurfaceFrame().height()/maxY;
+                unitW = surfaceHolder.getSurfaceFrame().width() / maxX;
+                unitH = surfaceHolder.getSurfaceFrame().height() / maxY;
 
                 eye = new Eye(getContext());
             }
@@ -69,11 +73,11 @@ public class GView extends SurfaceView implements Runnable{
             Canvas canvas = surfaceHolder.lockCanvas();
 
 
-                canvas.drawBitmap(bitmapSource, 0, 0, paint);
+            canvas.drawBitmap(bitmapSource, 0, 0, paint);
 
             eye.draw(paint, canvas);
 
-            for(Bugs bugs: bugs){
+            for (Bugs bugs : bugs) {
                 bugs.draw(paint, canvas);
             }
 
@@ -89,27 +93,32 @@ public class GView extends SurfaceView implements Runnable{
         }
     }
 
-    private void checkCollision(){
+    private void checkCollision() {
         for (Bugs bugs : bugs) {
-            if(bugs.isCollision(eye.x, eye.y, eye.size)){
+            if (bugs.isCollision(eye.x, eye.y, eye.size)) {
                 gameRunning = false;
 
+                Intent intent = new Intent(((Activity) appContext).getParent(), FinalActivity.class);
+                appContext.startActivity(intent) ;
+                ((Activity) appContext).finish();
             }
         }
     }
 
-    private void checkIfNewAsteroid(){
+    private void checkIfNewBugs() {
         int BUG_INTERVAL = 50;
-        if(currentTime >= BUG_INTERVAL){
+        if (currentTime >= BUG_INTERVAL) {
             Bugs bug = new Bugs(getContext());
             bugs.add(bug);
             currentTime = 0;
-        }else{
-            currentTime ++;
+        } else {
+            currentTime++;
         }
+
     }
-
-
 }
+
+
+
 
 
