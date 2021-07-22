@@ -4,8 +4,10 @@ import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 public class MainActivity extends AppCompatActivity implements View.OnTouchListener {
 
@@ -27,7 +29,11 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
 
         leftButton.setOnTouchListener(this);
         rightButton.setOnTouchListener(this);
-    }
+
+
+        }
+
+
 
     public boolean onTouch(View button, MotionEvent motion) {
         switch(button.getId()) {

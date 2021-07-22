@@ -1,9 +1,7 @@
 package com.fruitattackwin.bowl;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
+import android.graphics.*;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
@@ -18,19 +16,19 @@ public class GView extends SurfaceView implements Runnable{
     private boolean firstTime = true;
     private boolean gameRunning = true;
     private Eye eye;
-    private Thread gameThread = null;
-    private Paint paint;
-    private Canvas canvas;
-    private SurfaceHolder surfaceHolder;
-    private ArrayList<Bugs> bugs = new ArrayList<>();
-    private final int BUG_INTERVAL = 50;
+    private final Paint paint;
+    private final SurfaceHolder surfaceHolder;
+    private final ArrayList<Bugs> bugs = new ArrayList<>();
     private int currentTime = 0;
+
+
+
 
     public GView(Context context) {
         super(context);
         surfaceHolder = getHolder();
         paint = new Paint();
-        gameThread = new Thread(this);
+        Thread gameThread = new Thread(this);
         gameThread.start();
     }
 
@@ -42,6 +40,8 @@ public class GView extends SurfaceView implements Runnable{
             checkCollision();
             checkIfNewAsteroid();
             control();
+
+
         }
     }
 
@@ -65,8 +65,9 @@ public class GView extends SurfaceView implements Runnable{
                 eye = new Eye(getContext());
             }
 
-            canvas = surfaceHolder.lockCanvas();
-            canvas.drawColor(Color.BLACK);
+
+            Canvas canvas = surfaceHolder.lockCanvas();
+            canvas.drawColor(Color.CYAN);
 
             eye.draw(paint, canvas);
 
@@ -96,6 +97,7 @@ public class GView extends SurfaceView implements Runnable{
     }
 
     private void checkIfNewAsteroid(){
+        int BUG_INTERVAL = 50;
         if(currentTime >= BUG_INTERVAL){
             Bugs bug = new Bugs(getContext());
             bugs.add(bug);
@@ -105,4 +107,7 @@ public class GView extends SurfaceView implements Runnable{
         }
     }
 
+
 }
+
+
