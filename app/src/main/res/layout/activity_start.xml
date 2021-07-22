@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools" android:layout_width="fill_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_height="fill_parent"
+        android:background="#000">
+
+
+
+    <ImageView
+            android:alpha="0.3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/background"/>
+
+
+    <TextView
+            android:id="@+id/textView"
+            android:fontFamily="@font/aladin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:layout_centerInParent="true"
+            android:layout_alignParentTop="true"
+            android:text="Fruit Attack"
+            android:textSize="90dp"
+            android:textColor="#536DFE"/>
+
+    <Button
+            android:id="@+id/btn1"
+            android:tag="start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:text="Start"
+            android:onClick="onClick"
+            android:fontFamily="@font/aladin"
+            android:textSize="20dp"
+            android:textColor="#000"
+            android:background="@drawable/btn" />
+
+    <Button
+            android:id="@+id/btn2"
+            android:tag="rules"
+            android:onClick="onClick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="300dp"
+            android:layout_below="@+id/btn1"
+            android:layout_centerHorizontal="true"
+            android:text="Rules"
+            android:fontFamily="@font/aladin"
+            android:textSize="20dp"
+            android:textColor="#000"
+            android:background="@drawable/btn"/>
+
+
+    <Button
+            android:id="@+id/btn3"
+            android:tag="policy"
+            android:onClick="onClick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/btn2"
+            android:layout_marginTop="20dp"
+            android:text="PrivacyPolicy"
+            android:fontFamily="@font/aladin"
+            android:textSize="20dp"
+            android:textColor="#000"
+            android:background="@drawable/btn"/>
+
+    <Button
+            android:id="@+id/btn4"
+            android:tag="exit"
+            android:onClick="onClick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/btn3"
+            android:text="Exit"
+            android:fontFamily="@font/aladin"
+            android:textSize="20dp"
+            android:textColor="#000"
+            android:background="@drawable/btn"/>
+
+
+    <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animation"
+            android:layout_below="@+id/btn1"
+            android:layout_marginTop="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            app:lottie_rawRes="@raw/hoop"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"/>
+
+
+
+
+</RelativeLayout>

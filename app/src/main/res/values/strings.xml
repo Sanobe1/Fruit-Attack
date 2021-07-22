@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Fruit Attack</string>
+    <string name="rulestxt">Control the bells, and try to avoid the pineapple. If you want move left, touch the left
+        side of your screen. If you want move right, touch the right side of your screen. Have luck.
+    </string>
+
+
+</resources>
