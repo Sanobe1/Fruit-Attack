@@ -20,14 +20,15 @@ public class GView extends SurfaceView implements Runnable{
     private final SurfaceHolder surfaceHolder;
     private final ArrayList<Bugs> bugs = new ArrayList<>();
     private int currentTime = 0;
-
-
+    private boolean backAlreadyDraw = false;
+    private  Bitmap bitmapSource;
 
 
     public GView(Context context) {
         super(context);
         surfaceHolder = getHolder();
         paint = new Paint();
+        bitmapSource = BitmapFactory.decodeResource(getResources(), R.drawable.back);
         Thread gameThread = new Thread(this);
         gameThread.start();
     }
@@ -65,9 +66,10 @@ public class GView extends SurfaceView implements Runnable{
                 eye = new Eye(getContext());
             }
 
-
             Canvas canvas = surfaceHolder.lockCanvas();
-            canvas.drawColor(Color.CYAN);
+
+
+                canvas.drawBitmap(bitmapSource, 0, 0, paint);
 
             eye.draw(paint, canvas);
 
