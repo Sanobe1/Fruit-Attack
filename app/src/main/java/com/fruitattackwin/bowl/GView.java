@@ -97,12 +97,9 @@ public class GView extends SurfaceView implements Runnable {
             if (bugs.isCollision(eye.x, eye.y, eye.size)) {
                 gameRunning = false;
 
-                Intent intent = ((Activity) getContext()).getIntent();
+                Intent intent = new Intent(appContext.getApplicationContext(), FinalActivity.class);
                 getContext().startActivity(intent);
                 ((Activity) getContext()).finish();
-
-
-
             }
         }
     }
