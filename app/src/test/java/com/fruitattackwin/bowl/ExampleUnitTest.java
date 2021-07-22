@@ -1,4 +1,4 @@
-package com.ancientegypt.bowl;
+package com.fruitattackwin.bowl;
 
 import org.junit.Test;
 

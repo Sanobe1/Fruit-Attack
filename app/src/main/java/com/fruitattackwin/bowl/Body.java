@@ -1,4 +1,4 @@
-package com.ancientegypt.bowl;
+package com.fruitattackwin.bowl;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -24,7 +24,7 @@ public class Body {
     void update(){
     }
 
-    void drow(Paint paint, Canvas canvas){ // рисуем картинку
+    void draw(Paint paint, Canvas canvas){ // рисуем картинку
         canvas.drawBitmap(bitmap, x* GView.unitW, y* GView.unitH, paint);
     }
 }

@@ -1,4 +1,4 @@
-package com.ancientegypt.bowl;
+package com.fruitattackwin.bowl;
 
 import android.content.Context;
 import java.util.Random;
@@ -14,7 +14,7 @@ public class Bugs extends Body {
         bitmapId = R.drawable.bug;
         y=0;
         x = random.nextInt(GView.maxX) - radius;
-        size = radius*2;
+        size = radius;
         speed = minSpeed + (maxSpeed - minSpeed) * random.nextFloat();
 
         init(context);
@@ -26,6 +26,7 @@ public class Bugs extends Body {
     }
 
     public boolean isCollision(float eyeX, float eyeY, float eyeSize) {
-        return !(((x+size) < eyeX)||(x > (eyeX+eyeSize))||((y+size) < eyeY)||(y > (eyeY+eyeSize)));
+        return !(((x + size) < eyeX) || (x > (eyeX + eyeSize)) || ((y + size) < eyeY) || (y > (eyeY + eyeSize)));
     }
-}
+    }
+

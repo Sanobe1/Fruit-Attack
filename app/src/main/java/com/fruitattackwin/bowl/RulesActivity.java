@@ -1,13 +1,13 @@
-package com.ancientegypt.bowl;
+package com.fruitattackwin.bowl;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class PrivacyPolicyActivity extends AppCompatActivity {
+public class RulesActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_privacy_policy);
+        setContentView(R.layout.activity_rules);
     }
 }

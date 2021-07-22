@@ -1,4 +1,4 @@
-package com.ancientegypt.bowl;
+package com.fruitattackwin.bowl;
 
 import android.content.Context;
 
@@ -6,7 +6,7 @@ public class Eye extends Body {
 
     public Eye(Context context) {
         bitmapId = R.drawable.eye;
-        size = 5;
+        size = 3 ;
         x=7;
         y= GView.maxY - size - 1;
         speed = (float) 0.6;

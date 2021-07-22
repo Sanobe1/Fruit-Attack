@@ -1,4 +1,4 @@
-package com.ancientegypt.bowl;
+package com.fruitattackwin.bowl;
 
 import android.os.Bundle;
 import android.view.MotionEvent;

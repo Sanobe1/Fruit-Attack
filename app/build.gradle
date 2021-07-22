@@ -5,7 +5,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.ancientegypt.bowl"
+        applicationId "com.fruitattackwin.bowl"
         minSdkVersion 23
         targetSdkVersion 30
         versionCode 1

@@ -1,4 +1,4 @@
-package com.ancientegypt.bowl;
+package com.fruitattackwin.bowl;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -68,10 +68,10 @@ public class GView extends SurfaceView implements Runnable{
             canvas = surfaceHolder.lockCanvas();
             canvas.drawColor(Color.BLACK);
 
-            eye.drow(paint, canvas);
+            eye.draw(paint, canvas);
 
             for(Bugs bugs: bugs){
-                bugs.drow(paint, canvas);
+                bugs.draw(paint, canvas);
             }
 
             surfaceHolder.unlockCanvasAndPost(canvas);
